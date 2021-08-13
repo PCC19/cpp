@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 17:01:42 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/13 23:20:44 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/13 23:41:31 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,12 @@ int	main(void)
 
 	while (1)
 	{
-		std::cout << "Digite um commando (ADD, SEARCH, EXIT)" << std::endl;
-		break;
+		std::cout << std::endl << "Digite um commando (ADD, SEARCH, EXIT)" << std::endl;
+		std::cin >> command;
+		if (command == "EXIT")
+			break;
+		if (command == "PRINT")
+			contato.print();
 	}
 
 }
