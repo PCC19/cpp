@@ -56,9 +56,9 @@ void	Phone_book::get_index()
 	{
 		std::cout << "Please i an index:" << std::endl;
 		std::cin >> i;
-		if (is_number(i) && i > -1 && i < 8)
+		if (is_number(i) && std::stoi(i) > -1 && std::stoi(i) < 8)
 		{
-			this->contacts[i].print();
+			this->contacts[std::stoi(i)].print();
 			break;
 		}
 		else

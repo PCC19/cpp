@@ -18,7 +18,7 @@ public:
 // Methods
 	void	add(void);
 	bool	is_number(const std::string& s);
-	int		get_index();
+	void	get_index();
 	void	search(void);
 
 private:
