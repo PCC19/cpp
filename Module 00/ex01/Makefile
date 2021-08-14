@@ -6,8 +6,8 @@ SDIR =	./
 ODIR =	./
 
 SRCS =	$(SDIR)main.cpp\
-		$(SDIR)ClassContact.cpp
-
+		$(SDIR)ClassContact.cpp\
+		$(SDIR)ClassPhone_book.cpp
 
 OBJS =	$(patsubst $(SDIR)%.c, $(ODIR)%.o, $(SRCS))
 
