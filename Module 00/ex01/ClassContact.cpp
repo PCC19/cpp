@@ -20,6 +20,7 @@ Contact::~Contact(void)
 void Contact::print(void)
 {
 	std::cout << "Constructor" << std::endl;
+	std::cout << "------------------------" << std::endl;
 	std::cout <<"Index: ";
 	std::cout << this->index << std::endl;
 	std::cout <<"First Name: ";
@@ -33,4 +34,3 @@ void Contact::print(void)
 	std::cout <<"Darkest Secret: ";
 	std::cout << this->darkest_secret << std::endl;
 }
-

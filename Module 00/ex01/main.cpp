@@ -6,11 +6,12 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 17:01:42 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/14 20:32:04 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/14 21:55:48 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include "ClassContact.hpp"
 #include "ClassPhone_book.hpp"
@@ -31,8 +32,7 @@ int	main(void)
 		if (command == "ADD")
 			pb.add();
 		if (command == "SEARCH")
-			// command search
-			break;
+			pb.search();
 		if (command == "PRINT")
 			contato.print();
 	}
