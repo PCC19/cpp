@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 17:01:42 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/14 21:55:48 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/15 20:26:45 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,12 @@ int	main(void)
 	Phone_book	pb;
 
 	std::string command;
+	command = "";
 
-	while (1)
+	while (command != "EXIT")
 	{
 		std::cout << std::endl << "Digite um commando (ADD, SEARCH, EXIT)" << std::endl;
 		std::cin >> command;
-		if (command == "EXIT")
-			break;
 		if (command == "ADD")
 			pb.add();
 		if (command == "SEARCH")
@@ -36,38 +35,4 @@ int	main(void)
 		if (command == "PRINT")
 			contato.print();
 	}
-
 }
- // Usar 2 classes:
-     // pb
-     // contact
-
- // pb tera 8 elementos de array contact
-
- // funcao add:
-     // adiciona elementos usando % i para numeros maiores que 7 sobrescreverem
-     // numeros mais antigos
-
- // funcao search:
-     // fazer impressao formatada do banco de dados
-     // width
-     // 9 chars
-
- // funcao exit
-     // sai fora do loop infinito 11 // Usar 2 classes:
-     // pb
-     // contact
-
- // pb tera 8 elementos de array contact
-
- // funcao add:
-     // adiciona elementos usando % i para numeros maiores que 7 sobrescreverem
-     // numeros mais antigos
-
- // funcao search:
-     // fazer impressao formatada do banco de dados
-     // width
-     // 9 chars
-
- // funcao exit
-     // sai fora do loop infinito

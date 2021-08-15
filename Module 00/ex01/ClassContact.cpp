@@ -21,17 +21,17 @@ void Contact::print(void)
 	std::cout << "Contact Info:" << std::endl;
 	std::cout << "------------------------" << std::endl;
 	std::cout <<"Index: ";
-	std::cout << this->index << std::endl;
+	std::cout << "\t\t\t\t" << this->index << std::endl;
 	std::cout <<"First Name: ";
-	std::cout << this->first_name << std::endl;
+	std::cout << "\t\t\t" << this->first_name << std::endl;
 	std::cout <<"Last Name: ";
-	std::cout << this->last_name << std::endl;
+	std::cout << "\t\t\t" << this->last_name << std::endl;
 	std::cout <<"Nickname: ";
-	std::cout << this->nickname << std::endl;
+	std::cout << "\t\t\t" << this->nickname << std::endl;
 	std::cout <<"Phone Number: ";
-	std::cout << this->phone_number << std::endl;
+	std::cout << "\t\t\t" << this->phone_number << std::endl;
 	std::cout <<"Darkest Secret: ";
-	std::cout << this->darkest_secret << std::endl;
+	std::cout << "\t\t" << this->darkest_secret << std::endl;
 }
 
 void	Contact::set_index(int value)					{index = value;}

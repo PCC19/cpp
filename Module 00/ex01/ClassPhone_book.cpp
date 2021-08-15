@@ -22,25 +22,30 @@ void	Phone_book::add()
 	this->idx++;
 	this->idx %= 8;
 	std::cout << "Please enter contact info bellow:" << std::endl;
+
 	std::cout << "First Name: " << std::endl;
 	std::cin >> s;
 	this->contacts[i].set_first_name(s);
+
 	std::cout << "Last Name: " << std::endl;
 	std::cin >> s;
 	this->contacts[i].set_last_name(s);
+
 	std::cout << "Nickname: " << std::endl;
 	std::cin >> s;
 	this->contacts[i].set_nickname(s);
+
 	std::cout << "Phone Number: " << std::endl;
 	std::cin >> s;
 	this->contacts[i].set_phone_number(s);
+
 	std::cout << "Darkest Secret: " << std::endl;
 	std::cin >> s;
 	this->contacts[i].set_darkest_secret(s);
+
 	std::cout << "======== ADDED ==========" << std::endl;
 	this->contacts[i].print();
 	std::cout << "=========================" << std::endl;
-
 }
 
 bool Phone_book::is_number(const std::string& s)
@@ -57,14 +62,12 @@ void	Phone_book::get_index()
 
 	while (1)
 	{
-		std::cout << "Please state desired index:" << std::endl;
+		std::cout << "Please state desired index (0..7):" << std::endl;
 		std::cin >> i;
 		if (is_number(i) && std::stoi(i) > -1 && std::stoi(i) < 8)
 		{
-//			if (this->contacts[std::stoi(i)].first_name != "")
 			if (this->contacts[std::stoi(i)].get_first_name() != "")
 				this->contacts[std::stoi(i)].print();
-		
 			break;
 		}
 		else

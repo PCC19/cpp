@@ -14,12 +14,12 @@ public:
 // Methods
 	void print(void);
 
-	void	set_index(int value);
-	void	set_first_name(std::string value);
-	void	set_last_name(std::string value);
-	void	set_nickname(std::string value);
-	void	set_phone_number(std::string value);
-	void	set_darkest_secret(std::string value);
+	void		set_index(int value);
+	void		set_first_name(std::string value);
+	void		set_last_name(std::string value);
+	void		set_nickname(std::string value);
+	void		set_phone_number(std::string value);
+	void		set_darkest_secret(std::string value);
 
 	int			get_index(void);
 	std::string	get_first_name(void);
