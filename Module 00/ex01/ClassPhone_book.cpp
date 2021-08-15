@@ -5,7 +5,6 @@
 
 Phone_book::Phone_book(void)
 {
-	std::cout << "Constructor" << std::endl;
 	this->n_contacts = 0;
 	this->idx = 0;
 
@@ -13,7 +12,6 @@ Phone_book::Phone_book(void)
 
 Phone_book::~Phone_book(void)
 {
-	std::cout << "Destructor" << std::endl;
 }
 
 void	Phone_book::add()
@@ -22,7 +20,7 @@ void	Phone_book::add()
 	i = this->idx;
 	this->contacts[i].index = i;
 	this->idx++;
-	this->idx %= 7;
+	this->idx %= 8;
 	std::cout << "Please enter contact info bellow:" << std::endl;
 	std::cout << "First Name: " << std::endl;
 	std::cin >> this->contacts[i].first_name;
@@ -54,11 +52,12 @@ void	Phone_book::get_index()
 
 	while (1)
 	{
-		std::cout << "Please i an index:" << std::endl;
+		std::cout << "Please state desired index:" << std::endl;
 		std::cin >> i;
 		if (is_number(i) && std::stoi(i) > -1 && std::stoi(i) < 8)
 		{
-			this->contacts[std::stoi(i)].print();
+			if (this->contacts[std::stoi(i)].first_name != "")
+				this->contacts[std::stoi(i)].print();
 			break;
 		}
 		else
@@ -66,11 +65,38 @@ void	Phone_book::get_index()
 	}
 }
 
+void	Phone_book::print_header()
+{
+	std::cout << std::setw(10);
+	std::cout << "Index" << "|";
+	std::cout << std::setw(10);
+	std::cout << "F. Name" << "|";
+	std::cout << std::setw(10);
+	std::cout << "L. Name" << "|";
+	std::cout << std::setw(10);
+	std::cout << "Nick" << "|";
+	std::cout << std::endl;
+
+}
+
+std::string	Phone_book::trunc_string(std::string s)
+{
+	std::string small_string(s, 0, 9);
+	if (s.length() > 9)
+	{
+		small_string = small_string + ".";
+		return (small_string);
+	}
+	else
+		return (s);
+}
+
 void	Phone_book::search()
 {
 	int i;
 
 	i = -1;
+	print_header();
 	while (++i < 8)
 	{
 		if (this->contacts[i].first_name != "")
@@ -78,11 +104,11 @@ void	Phone_book::search()
 			std::cout << std::setw(10);
 			std::cout << this->contacts[i].index << "|";
 			std::cout << std::setw(10);
-			std::cout << this->contacts[i].first_name << "|";
+			std::cout << trunc_string(this->contacts[i].first_name) << "|";
 			std::cout << std::setw(10);
-			std::cout << this->contacts[i].last_name << "|";
+			std::cout << trunc_string(this->contacts[i].last_name) << "|";
 			std::cout << std::setw(10);
-			std::cout << this->contacts[i].nickname << "|";
+			std::cout << trunc_string(this->contacts[i].nickname) << "|";
 			std::cout << std::endl;
 		}
 	}

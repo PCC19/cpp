@@ -16,10 +16,12 @@ public:
 	Contact contacts[8];
 
 // Methods
-	void	add(void);
-	bool	is_number(const std::string& s);
-	void	get_index();
-	void	search(void);
+	void		add(void);
+	bool		is_number(const std::string& s);
+	void		get_index();
+	void		print_header();
+	std::string	trunc_string(std::string s);
+	void		search(void);
 
 private:
 

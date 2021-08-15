@@ -3,7 +3,6 @@
 
 Contact::Contact(void)
 {
-	std::cout << "Constructor" << std::endl;
 	this->index = 0;
 	this->first_name = "";
 	this->last_name ="";
@@ -14,12 +13,12 @@ Contact::Contact(void)
 
 Contact::~Contact(void)
 {
-	std::cout << "Destructor" << std::endl;
 }
 
 void Contact::print(void)
 {
-	std::cout << "Constructor" << std::endl;
+	std::cout << "------------------------" << std::endl;
+	std::cout << "Contact Info:" << std::endl;
 	std::cout << "------------------------" << std::endl;
 	std::cout <<"Index: ";
 	std::cout << this->index << std::endl;
