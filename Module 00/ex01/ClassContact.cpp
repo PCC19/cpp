@@ -33,3 +33,17 @@ void Contact::print(void)
 	std::cout <<"Darkest Secret: ";
 	std::cout << this->darkest_secret << std::endl;
 }
+
+void	Contact::set_index(int value)					{index = value;}
+void	Contact::set_first_name(std::string value)		{first_name = value;}
+void	Contact::set_last_name(std::string value)		{last_name = value;}
+void	Contact::set_nickname(std::string value)		{nickname = value;}
+void	Contact::set_phone_number(std::string value)	{phone_number = value;}
+void	Contact::set_darkest_secret(std::string value)	{darkest_secret = value;}
+
+int			Contact::get_index(void)			{return index;}
+std::string	Contact::get_first_name(void)		{return first_name;}
+std::string	Contact::get_last_name(void)		{return last_name;}
+std::string	Contact::get_nickname(void)			{return nickname;}
+std::string	Contact::get_phone_number(void)		{return phone_number;}
+std::string	Contact::get_darkest_secret(void)	{return darkest_secret;}

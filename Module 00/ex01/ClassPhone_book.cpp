@@ -5,9 +5,7 @@
 
 Phone_book::Phone_book(void)
 {
-	this->n_contacts = 0;
 	this->idx = 0;
-
 }
 
 Phone_book::~Phone_book(void)
@@ -17,21 +15,33 @@ Phone_book::~Phone_book(void)
 void	Phone_book::add()
 {
 	int i;
+	std::string s;
+
 	i = this->idx;
-	this->contacts[i].index = i;
+	this->contacts[i].set_index(i);
 	this->idx++;
 	this->idx %= 8;
 	std::cout << "Please enter contact info bellow:" << std::endl;
 	std::cout << "First Name: " << std::endl;
-	std::cin >> this->contacts[i].first_name;
-	std::cout << "Last Name: " << std::endl;
-	std::cin >> this->contacts[i].last_name;
-	std::cout << "Nickname: " << std::endl;
-	std::cin >> this->contacts[i].nickname;
-	std::cout << "Phone Number: " << std::endl;
-	std::cin >> this->contacts[i].phone_number;
-	std::cout << "Darkest Secret: " << std::endl;
-	std::cin >> this->contacts[i].darkest_secret;
+	std::cin >> s;
+	this->contacts[i].set_first_name(s);
+	std::cin >> s;
+	this->contacts[i].set_last_name(s);
+	std::cin >> s;
+	this->contacts[i].set_nickname(s);
+	std::cin >> s;
+	this->contacts[i].set_phone_number(s);
+	std::cin >> s;
+	this->contacts[i].set_darkest_secret(s);
+//	std::cin >> this->contacts[i].first_name;
+//	std::cout << "Last Name: " << std::endl;
+//	std::cin >> this->contacts[i].last_name;
+//	std::cout << "Nickname: " << std::endl;
+//	std::cin >> this->contacts[i].nickname;
+//	std::cout << "Phone Number: " << std::endl;
+//	std::cin >> this->contacts[i].phone_number;
+//	std::cout << "Darkest Secret: " << std::endl;
+//	std::cin >> this->contacts[i].darkest_secret;
 	std::cout << "======== ADDED ==========" << std::endl;
 	this->contacts[i].print();
 	std::cout << "=========================" << std::endl;
@@ -56,8 +66,10 @@ void	Phone_book::get_index()
 		std::cin >> i;
 		if (is_number(i) && std::stoi(i) > -1 && std::stoi(i) < 8)
 		{
-			if (this->contacts[std::stoi(i)].first_name != "")
+//			if (this->contacts[std::stoi(i)].first_name != "")
+			if (this->contacts[std::stoi(i)].get_first_name() != "")
 				this->contacts[std::stoi(i)].print();
+		
 			break;
 		}
 		else
@@ -76,7 +88,6 @@ void	Phone_book::print_header()
 	std::cout << std::setw(10);
 	std::cout << "Nick" << "|";
 	std::cout << std::endl;
-
 }
 
 std::string	Phone_book::trunc_string(std::string s)
@@ -99,16 +110,16 @@ void	Phone_book::search()
 	print_header();
 	while (++i < 8)
 	{
-		if (this->contacts[i].first_name != "")
+		if (this->contacts[i].get_first_name() != "")
 		{
 			std::cout << std::setw(10);
-			std::cout << this->contacts[i].index << "|";
+			std::cout << this->contacts[i].get_index() << "|";
 			std::cout << std::setw(10);
-			std::cout << trunc_string(this->contacts[i].first_name) << "|";
+			std::cout << trunc_string(this->contacts[i].get_first_name()) << "|";
 			std::cout << std::setw(10);
-			std::cout << trunc_string(this->contacts[i].last_name) << "|";
+			std::cout << trunc_string(this->contacts[i].get_last_name()) << "|";
 			std::cout << std::setw(10);
-			std::cout << trunc_string(this->contacts[i].nickname) << "|";
+			std::cout << trunc_string(this->contacts[i].get_nickname()) << "|";
 			std::cout << std::endl;
 		}
 	}

@@ -11,7 +11,6 @@ public:
 	~Phone_book(void);
 
 // Atributes
-	int	n_contacts;
 	int	idx;
 	Contact contacts[8];
 
