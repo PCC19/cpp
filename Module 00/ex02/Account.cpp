@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 20:57:00 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/15 21:45:30 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/15 21:48:01 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,13 @@ Account::Account( int initial_deposit ) :
 
 Account::~Account( void )
 {
-	std::cout << "saiu";
+	_nbAccounts--;
+	_totalAmount -= _amount;
+	_totalNbDeposits -= _nbDeposits;
+	_totalNbWithdrawals -= _nbWithdrawals;
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";amount:" << _amount;
+	std::cout << ";closed" << std::endl;
 }
 //
 //	void	makeDeposit( int deposit );
