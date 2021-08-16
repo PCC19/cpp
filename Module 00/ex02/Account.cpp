@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 20:57:00 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/16 17:13:48 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/16 17:25:00 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	Account::displayAccountsInfos( void )
 	std::cout << "withdrawals:" << _totalNbWithdrawals;
 	std::cout << std::endl;
 }
-//[19920104_091532] accounts:8;total:20049;deposits:0;withdrawals:0
+
 Account::Account( int initial_deposit ) :
 		_accountIndex(_nbAccounts), _amount(initial_deposit),
 		_nbDeposits(0), _nbWithdrawals(0)
@@ -61,6 +61,14 @@ Account::~Account( void )
 //
 //	void	makeDeposit( int deposit );
 //	bool	makeWithdrawal( int withdrawal );
-//	int		checkAmount( void ) const;
-//	void	displayStatus( void ) const;
+//	int		checkAmount( void ) constdisplayStatus( void ) const;
+
+void	Account::displayStatus( void ) const
+{
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";amount:" << _amount;
+	std::cout << ";deposits:" << _nbDeposits;
+	std::cout << ";withdrawals:" << _nbWithdrawals << std::endl;
+}
+
 void	Account::_displayTimestamp( void ){std::cout << "[19920104_091532] ";}
