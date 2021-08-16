@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 20:57:00 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/16 17:25:00 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/16 17:26:37 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,17 @@ void	Account::displayStatus( void ) const
 	std::cout << ";withdrawals:" << _nbWithdrawals << std::endl;
 }
 
-void	Account::_displayTimestamp( void ){std::cout << "[19920104_091532] ";}
+//void	Account::_displayTimestamp( void ){std::cout << "[19920104_091532] ";}
+void	Account::_displayTimestamp( void )
+{
+	time_t now = time(0);
+	
+	tm *ltm = localtime(&now);
+	std::cout << '[' << 1900 + ltm->tm_year << 1 + ltm->tm_mon << ltm->tm_mday;
+	std::cout << '_' << 5+ltm->tm_hour << 30+ltm->tm_min << ltm->tm_sec << "] ";
+}
+
+
+
+
+
