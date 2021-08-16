@@ -56,10 +56,10 @@ int		main( void ) {
 
 		(*(it.first)).makeWithdrawal( *(it.second) );
 	}
-	return (0);
 
 	Account::displayAccountsInfos();
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	return (0);
 
 	return 0;
 }

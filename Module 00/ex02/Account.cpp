@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 20:57:00 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/16 18:59:36 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/16 19:02:52 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,24 +74,25 @@ void	Account::makeDeposit( int deposit )
 	_totalAmount += deposit;
 }
 
-bool	Account::makeWithdrawal( int withdrawal );
+bool	Account::makeWithdrawal( int withdrawal )
 {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex;
 	std::cout << ";p_amount:" << _amount;
 	std::cout << ";withdrawal:";
 	if (withdrawal > _amount)
-		std::cout << "refused"
-	else
 	{
-		_amount -= withdrawal;
-		std::cout << ";amount:" << _amount;
-		_nbWithdrawals ++;
-		std::cout << ";nb_withdrawals:" << _nbWithdrawals;
-		std::cout << std::endl;
-		_totalWithdrawals += 1;
-		_totalAmount -= withdrawal;
+		std::cout << "refused" << std::endl;
+		return (false);
 	}
+	_amount -= withdrawal;
+	std::cout << ";amount:" << _amount;
+	_nbWithdrawals ++;
+	std::cout << ";nb_withdrawals:" << _nbWithdrawals;
+	std::cout << std::endl;
+	_totalNbWithdrawals += 1;
+	_totalAmount -= withdrawal;
+	return (true);
 }
 
 //	int		checkAmount( void ) constdisplayStatus( void ) const;
