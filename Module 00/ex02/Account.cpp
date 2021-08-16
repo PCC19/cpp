@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 20:57:00 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/16 19:02:52 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/16 19:16:54 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Account::Account( int initial_deposit ) :
 	Account::_nbAccounts++;
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex <<";";
-	std::cout << "ammount:" << _amount <<";";
+	std::cout << "amount:" << _amount <<";";
 	std::cout << "created" << std::endl;
 }
 
@@ -85,6 +85,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 		std::cout << "refused" << std::endl;
 		return (false);
 	}
+	std::cout << withdrawal;
 	_amount -= withdrawal;
 	std::cout << ";amount:" << _amount;
 	_nbWithdrawals ++;
@@ -95,7 +96,10 @@ bool	Account::makeWithdrawal( int withdrawal )
 	return (true);
 }
 
-//	int		checkAmount( void ) constdisplayStatus( void ) const;
+int		Account::checkAmount( void ) const
+{
+	return (_amount);
+}
 
 void	Account::displayStatus( void ) const
 {
