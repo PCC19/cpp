@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 20:57:00 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/16 19:16:54 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/16 19:21:36 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ Account::~Account( void )
 	std::cout << "index:" << _accountIndex << ";amount:" << _amount;
 	std::cout << ";closed" << std::endl;
 }
-//
+
 void	Account::makeDeposit( int deposit )
 {
 	_displayTimestamp();
@@ -118,8 +118,3 @@ void	Account::_displayTimestamp( void )
 	std::cout << '[' << 1900 + ltm->tm_year << 1 + ltm->tm_mon << ltm->tm_mday;
 	std::cout << '_' << 5+ltm->tm_hour << 30+ltm->tm_min << ltm->tm_sec << "] ";
 }
-
-
-
-
-
