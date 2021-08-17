@@ -1,5 +1,5 @@
 #include <iostream>
-#include "ClassZombie.hpp"
+#include "Zombie.hpp"
 
 Zombie::Zombie(void)
 {

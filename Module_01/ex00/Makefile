@@ -6,7 +6,7 @@ SDIR =	./
 ODIR =	./
 
 SRCS =	$(SDIR)main.cpp\
-		$(SDIR)ClassZombie.cpp\
+		$(SDIR)Zombie.cpp\
 		$(SDIR)NewZombie.cpp\
 		$(SDIR)randomChump.cpp
 

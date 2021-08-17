@@ -6,14 +6,14 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 22:20:17 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/17 22:56:25 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/17 23:03:40 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include "ClassZombie.hpp"
+#include "Zombie.hpp"
 
 Zombie* newZombie( std::string name );
 void	randomChump( std::string name );
