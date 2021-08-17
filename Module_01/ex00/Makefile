@@ -6,7 +6,8 @@ SDIR =	./
 ODIR =	./
 
 SRCS =	$(SDIR)main.cpp\
-		$(SDIR)ClassZombie.cpp
+		$(SDIR)ClassZombie.cpp\
+		$(SDIR)NewZombie.cpp
 
 OBJS =	$(patsubst $(SDIR)%.c, $(ODIR)%.o, $(SRCS))
 

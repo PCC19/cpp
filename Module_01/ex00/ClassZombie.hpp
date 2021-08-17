@@ -7,6 +7,7 @@ class Zombie
 public:
 // Constructor & Destructor
 	Zombie(void);
+	Zombie(std::string s);
 	~Zombie(void);
 
 // Atributes

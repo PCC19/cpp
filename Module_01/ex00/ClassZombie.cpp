@@ -6,6 +6,11 @@ Zombie::Zombie(void)
 	std::cout << "Constructor" << std::endl;
 }
 
+Zombie::Zombie(std::string s): _name(s)
+{
+	std::cout << "Constructor 2" << std::endl;
+}
+
 Zombie::~Zombie(void)
 {
 	std::cout << "Goodbye " << _name << std::endl;
