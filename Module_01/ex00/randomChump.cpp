@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/17 22:20:17 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/17 22:56:25 by pcunha           ###   ########.fr       */
+/*   Created: 2021/08/17 22:46:18 by pcunha            #+#    #+#             */
+/*   Updated: 2021/08/17 22:49:32 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,9 @@
 #include <string>
 #include "ClassZombie.hpp"
 
-Zombie* newZombie( std::string name );
-void	randomChump( std::string name );
-
-int main (void)
+void randomChump( std::string name )
 {
-	Zombie zumbi;
+	Zombie	stack_zumbi(name);
+	stack_zumbi.announce();
 
-	zumbi.set_name("zumbi_da_stack 1");				// sai no return
-	zumbi.announce();
-
-	randomChump("zumbi_da_stack 2");				// sai apos funcao
-
-	Zombie *john = newZombie("zumbi_do_heap");		//sai no delete
-	john->announce();
-
-	Zombie zumbi2("paulo");							//sai no return
-	zumbi2.announce();
-
-	delete john;
-
-	return (0);
 }

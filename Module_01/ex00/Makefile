@@ -7,7 +7,8 @@ ODIR =	./
 
 SRCS =	$(SDIR)main.cpp\
 		$(SDIR)ClassZombie.cpp\
-		$(SDIR)NewZombie.cpp
+		$(SDIR)NewZombie.cpp\
+		$(SDIR)randomChump.cpp
 
 OBJS =	$(patsubst $(SDIR)%.c, $(ODIR)%.o, $(SRCS))
 
