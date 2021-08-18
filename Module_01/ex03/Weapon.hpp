@@ -6,7 +6,7 @@ class Weapon
 
 public:
 // Constructor & Destructor
-	Weapon(std::string s);
+	Weapon(std::string const & s);
 	Weapon(void);
 	~Weapon(void);
 
@@ -14,13 +14,13 @@ public:
 
 
 // Methods
-void			setType(std::string s)	{type = s;}
-std::string		getType(void)			{return type;}
+void					setType(std::string const & s);
+std::string const &		getType(void);
 
 private:
 
 // Atributes
-	std::string	type;
+	std::string		type;
 
 // Methods
 
