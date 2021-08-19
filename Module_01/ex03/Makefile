@@ -7,7 +7,8 @@ ODIR =	./
 
 SRCS =	$(SDIR)main.cpp\
 		$(SDIR)Weapon.cpp\
-		$(SDIR)HumanA.cpp
+		$(SDIR)HumanA.cpp\
+		$(SDIR)HumanB.cpp
 
 OBJS =	$(patsubst $(SDIR)%.c, $(ODIR)%.o, $(SRCS))
 

@@ -1,26 +1,24 @@
 #include <iostream>
-#include "ClassHumanB.hpp"
+#include "HumanB.hpp"
 
-HumanB::HumanB(void)
+HumanB::HumanB(std::string name) : name(name)
 {
-	std::cout << "Constructor" << std::endl;
+//	std::cout << "Constructor " << HumanB::name  << std::endl;
 }
 
 HumanB::~HumanB(void)
 {
-	std::cout << "Destructor" << std:endl;
+//	std::cout << "Destructor" << std::endl;
 }
 
-HumanB::HumanB(const HumanB &obj)
+
+void	HumanB::attack()
 {
-	HumanB::operator = (obj);
+	std::cout << HumanB::name << " attacks with his " << weapon->getType() << std::endl;
 }
 
-HumanB &HumanB::operator = (const HumanB &obj)
+void	HumanB::setWeapon(Weapon &weapon)
 {
-	if (this != &obj)
-	{
-		this->XXX = obj.XXX();
-	}
-	return (*this);
+	HumanB::weapon = &weapon;
+
 }
