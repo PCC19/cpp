@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 22:20:17 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/19 21:29:23 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/19 21:59:58 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,22 @@ int main (int argc, char **argv)
 	std::string input_filename;
 	std::string output_filename;
 	std::string line;
-	std::string find_str;
-	std::string replace_str;
+	std::string s1;
+	std::string s2;
 	int	i;
 	int	j;
 
-	// Input validation
 	if (argc != 4)
 	{
-		std::cout << "usage: ./replace [filename] [find_string] [replace_string]" << std::endl;
+		std::cout << "usage: ./replace [filename] [s1ing] [s2ing]" << std::endl;
 		return (1);
 	}
 	else
 	{
 		input_filename = std::string(argv[1]);
 		output_filename	= upperCase(input_filename) + ".replace";
-		find_str = std::string(argv[2]);
-		replace_str = std::string(argv[3]);
+		s1 = std::string(argv[2]);
+		s2 = std::string(argv[3]);
 	
 		std::ifstream input_file;
 		input_file.open(input_filename.c_str());
@@ -64,15 +63,16 @@ int main (int argc, char **argv)
 				i = -1;
 				while (line[++i])
 				{
-					j = line.find(find_str, i);
-					if (j == (int)std::string::npos)
-						output_file << line[i];
-					else
+					j = line.find(s1, i);
+					if (j == i)
 					{
-						output_file << replace_str;
-						i += replace_str.length();
+						output_file << s2;
+						i += (s2.length() - 1);
 					}
+					else
+						output_file << line[i];
 				}
+				output_file << std::endl;
 			}
 			input_file.close();
 			output_file.close();
