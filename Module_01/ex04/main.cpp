@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 22:20:17 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/19 21:05:14 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/19 21:29:23 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,6 @@
 
 // ./replace filename s1 s2
 // output: FILENAME.replace com todas ocorrencias de s1 trocadas por s2
-
-// Pegar inputs da linha de comando
-	// checar se inputs estao corretos
-		// numero de inputs
-// abrir arquivo entrada e saida
-// loop
-	// ler linha
-	// procurar s1
-	// deletar s1
-	// inserir s2
-	// salvar linha
-	// repetir
-// fechar arquivos
 
 std::string upperCase(std::string& s)
 {
@@ -46,6 +33,10 @@ int main (int argc, char **argv)
 	std::string input_filename;
 	std::string output_filename;
 	std::string line;
+	std::string find_str;
+	std::string replace_str;
+	int	i;
+	int	j;
 
 	// Input validation
 	if (argc != 4)
@@ -56,22 +47,36 @@ int main (int argc, char **argv)
 	else
 	{
 		input_filename = std::string(argv[1]);
-		output_filename	= upperCase(filename) + ".replace";
+		output_filename	= upperCase(input_filename) + ".replace";
+		find_str = std::string(argv[2]);
+		replace_str = std::string(argv[3]);
 	
-		ifstream input_file(input_filename);
-		ofstream output_file(output_filename);
+		std::ifstream input_file;
+		input_file.open(input_filename.c_str());
+		std::ofstream output_file;
+		output_file.open(output_filename.c_str());
 
-		if (input_file.is_open())
+		j = 0;
+		if (input_file.is_open() && output_file.is_open())
 		{
 			while (std::getline(input_file, line))
 			{
-				// using printf() in all tests for consistency
-				printf("%s", line.c_str());
+				i = -1;
+				while (line[++i])
+				{
+					j = line.find(find_str, i);
+					if (j == (int)std::string::npos)
+						output_file << line[i];
+					else
+					{
+						output_file << replace_str;
+						i += replace_str.length();
+					}
+				}
 			}
-		file.close();
+			input_file.close();
+			output_file.close();
 		}
 	}
 	return (0);
-}
-
 }
