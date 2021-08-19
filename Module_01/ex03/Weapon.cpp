@@ -13,7 +13,6 @@ Weapon::Weapon(std::string const & s)
 	Weapon::setType(s);
 }
 
-
 Weapon::~Weapon(void)
 {
 	std::cout << "Destructor" << std::endl;

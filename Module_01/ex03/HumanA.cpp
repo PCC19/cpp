@@ -1,26 +1,18 @@
 #include <iostream>
-#include "ClassHumanA.hpp"
+#include "HumanA.hpp"
 
-HumanA::HumanA(void)
+HumanA::HumanA(std::string init_name, Weapon &init_weapon) : name(init_name), weapon(init_weapon)
 {
-	std::cout << "Constructor" << std::endl;
+	std::cout << "Constructor: " << HumanA::name << " has " << weapon.getType() << std::endl;
 }
 
 HumanA::~HumanA(void)
 {
-	std::cout << "Destructor" << std:endl;
+	std::cout << "Destructor HumanA" << std::endl;
 }
 
-HumanA::HumanA(const HumanA &obj)
+void	HumanA::attack()
 {
-	HumanA::operator = (obj);
+	std::cout << HumanA::name << " attacks with his " << weapon.getType() << std::endl;
 }
 
-HumanA &HumanA::operator = (const HumanA &obj)
-{
-	if (this != &obj)
-	{
-		this->XXX = obj.XXX();
-	}
-	return (*this);
-}
