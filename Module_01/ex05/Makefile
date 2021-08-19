@@ -8,7 +8,7 @@ ODIR =	./
 SRCS =	$(SDIR)main.cpp\
 		$(SDIR)Karen.cpp
 
-OBJS =	$(patsubst $(SDIR)%.c, $(ODIR)%.o, $(SRCS))
+OBJS =	$(patsubst $(SDIR)%.cpp, $(ODIR)%.o, $(SRCS))
 
 CC = clang++
 C_FLAGS = -Wall -Werror -Wextra -g -std=c++98

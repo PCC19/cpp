@@ -6,12 +6,11 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 16:28:52 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/11 17:04:50 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/11 17:18:29 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cctype>
 
 int	main(int argc, char *argv[])
 {

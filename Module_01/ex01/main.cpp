@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 22:20:17 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/18 02:45:55 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/18 02:56:26 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main (void)
 	int		N;
 
 	N = 5;
-	zumbis = zombieHorde(N, "zumbiss");
+	zumbis = zombieHorde(N, "zumbisissss");
 	i = -1;
 	while (++i < N) zumbis[i].announce();
 
