@@ -21,27 +21,11 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 
-	void	setName(std::string value);
-	void	setHitpoints(int value);
-	void	setEpoints(int value);
-	void	setAdamage(int value);
-
-	std::string	getName(void) const;
-	int			getHitpoints(void) const;
-	int			getEpoints(void) const;
-	int			getAdamage(void) const;
-
 	void guardGate(void);
 
 // Atributes
 
 private:
-
-// Atributes
-	std::string Name;
-	int	Hitpoints = 10;
-	int Epoints	= 10;
-	int	Adamage = 0;
 
 	bool	guardMode = 0;
 

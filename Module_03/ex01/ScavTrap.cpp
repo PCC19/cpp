@@ -36,18 +36,6 @@ ScavTrap &ScavTrap::operator = (const ScavTrap &obj)
 	return (*this);
 }
 
-void	ScavTrap::setName(std::string value)		{ScavTrap::Name = value;}
-void	ScavTrap::setHitpoints(int value)			{ScavTrap::Hitpoints = value;}
-void	ScavTrap::setEpoints(int value)				{ScavTrap::Epoints = value;}
-void	ScavTrap::setAdamage(int value)				{ScavTrap::Adamage = value;}
-
-std::string	ScavTrap::getName(void)	const					{return ScavTrap::Name;}
-int			ScavTrap::getHitpoints(void) const				{return ScavTrap::Hitpoints;}
-int			ScavTrap::getEpoints(void) const				{return ScavTrap::Epoints;}
-int			ScavTrap::getAdamage(void) const				{return ScavTrap::Adamage;}
-
-
-
 void ScavTrap::attack(std::string const & target)
 {
 	std::cout << "ScavTrap " << ScavTrap::Name << " attack " << target << ", causing " << ScavTrap::Adamage << " points of damage !" << std::endl;
