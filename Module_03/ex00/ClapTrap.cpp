@@ -7,13 +7,16 @@ ClapTrap::ClapTrap(void)
 
 ClapTrap::ClapTrap(std::string s)
 {
-	std::cout << "Name Constructor" << std::endl;
+	std::cout << "A ClapTrap is born: " << s << " !" << std::endl;
 	ClapTrap::Name = s;
+	ClapTrap::Hitpoints = 10;
+	ClapTrap::Epoints = 10;
+	ClapTrap::Adamage = 0;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Default Destructor" << std::endl;
+	std::cout << "A ClapTrap is no more !" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &obj)

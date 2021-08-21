@@ -37,9 +37,9 @@ private:
 
 // Atributes
 	std::string Name;
-	int	Hitpoints = 10;
-	int Epoints	= 10;
-	int	Adamage = 0;
+	int	Hitpoints;
+	int Epoints;
+	int	Adamage;
 
 
 // Methods
