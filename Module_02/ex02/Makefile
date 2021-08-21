@@ -19,7 +19,7 @@ $(NAME):	$(OBJS)
 	$(CC) $(HEADERS) $(OBJS) $(C_FLAGS) $(C_SANIT) $(L_FLAGS) -o $@
 	echo CONCLUIDO
 
-$(ODIR)%.o: $(SDIR)%.c
+$(ODIR)%.o: $(SDIR)%.cpp
 		#mkdir -p $(ODIR)
 		$(CC) $(C_FLAGS) $(HEADERS) $(L_FLAGS) -c $< -o $@
 

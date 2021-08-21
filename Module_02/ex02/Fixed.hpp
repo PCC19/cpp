@@ -47,8 +47,8 @@ public:
 private:
 
 // Atributes
-	int			fixed_point_value;
-	const int	frac_bits = 8;
+	int					fixed_point_value;
+	static const int	frac_bits = 8;
 
 // Methods
 
