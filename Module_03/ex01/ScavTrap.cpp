@@ -66,7 +66,8 @@ void ScavTrap::beRepaired(unsigned int amount)
 	std::cout << "HP:" << ScavTrap::Hitpoints << std::endl;
 }
 
-//void guarGate(void)
-//{
-//	std::cout << Name << " has entered gate keeper mode !" << std::endl;
-//}
+void ScavTrap::guardGate(void)
+{
+	ScavTrap::guardMode = 1;
+	std::cout << Name << " has entered gate keeper mode !" << std::endl;
+}

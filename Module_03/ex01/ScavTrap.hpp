@@ -31,7 +31,7 @@ public:
 	int			getEpoints(void) const;
 	int			getAdamage(void) const;
 
-//	void guardGate(void);
+	void guardGate(void);
 
 // Atributes
 
@@ -43,6 +43,7 @@ private:
 	int Epoints	= 10;
 	int	Adamage = 0;
 
+	bool	guardMode = 0;
 
 // Methods
 
