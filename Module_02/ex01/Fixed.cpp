@@ -20,7 +20,7 @@ Fixed::Fixed(float f)
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Default Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &obj)
@@ -48,7 +48,6 @@ std::ostream &operator << (std::ostream &os, const Fixed &f)
 
 int		Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (Fixed::fixed_point_value);
 }
 
