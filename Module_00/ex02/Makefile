@@ -11,7 +11,7 @@ SRCS =	$(SDIR)tests.cpp\
 OBJS =	$(patsubst $(SDIR)%.cpp, $(ODIR)%.o, $(SRCS))
 
 CC = clang++
-C_FLAGS = -Wall -Werror -Wextra -g
+C_FLAGS = -Wall -Werror -Wextra -g -std=c++98
 C_SANIT = -fsanitize=address
 
 $(NAME):	$(OBJS) 
