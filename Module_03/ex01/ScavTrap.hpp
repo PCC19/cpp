@@ -17,9 +17,6 @@ public:
 	ScavTrap& operator = (const ScavTrap &obj);   
 
 // Methods
-	void attack(std::string const & target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
 
 	void guardGate(void);
 
@@ -27,7 +24,7 @@ public:
 
 private:
 
-	bool	guardMode = 0;
+	bool	guardMode;
 
 // Methods
 

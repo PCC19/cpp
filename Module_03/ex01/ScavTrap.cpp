@@ -12,6 +12,7 @@ ScavTrap::ScavTrap(std::string s)
 	ScavTrap::Hitpoints = 100;
 	ScavTrap::Epoints = 50;
 	ScavTrap::Adamage = 20;
+	ScavTrap::guardMode= 0;
 }
 
 ScavTrap::~ScavTrap(void)
@@ -34,24 +35,6 @@ ScavTrap &ScavTrap::operator = (const ScavTrap &obj)
 		this->Adamage = obj.getAdamage();
 	}
 	return (*this);
-}
-
-void ScavTrap::attack(std::string const & target)
-{
-	std::cout << "ScavTrap " << ScavTrap::Name << " attack " << target << ", causing " << ScavTrap::Adamage << " points of damage !" << std::endl;
-}
-void ScavTrap::takeDamage(unsigned int amount)
-{
-	ScavTrap::Hitpoints -= amount;
-	std::cout << "ScavTrap " << ScavTrap::Name << " takes " << amount << " points of damage ! ";
-	std::cout << "HP:" << ScavTrap::Hitpoints << std::endl;
-
-}
-void ScavTrap::beRepaired(unsigned int amount)
-{
-	ScavTrap::Hitpoints += amount;
-	std::cout << "ScavTrap " << ScavTrap::Name << " repairs " << amount << " hitpoint  ! ";
-	std::cout << "HP:" << ScavTrap::Hitpoints << std::endl;
 }
 
 void ScavTrap::guardGate(void)

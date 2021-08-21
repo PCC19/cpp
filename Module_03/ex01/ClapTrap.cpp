@@ -9,6 +9,9 @@ ClapTrap::ClapTrap(std::string s)
 {
 	std::cout << "ClapTrap Name Constructor" << std::endl;
 	ClapTrap::Name = s;
+	ClapTrap::Hitpoints = 10;
+	ClapTrap::Epoints = 10;
+	ClapTrap::Adamage = 0;
 }
 
 ClapTrap::~ClapTrap(void)
@@ -61,4 +64,9 @@ void ClapTrap::beRepaired(unsigned int amount)
 	ClapTrap::Hitpoints += amount;
 	std::cout << "ClapTrap " << ClapTrap::Name << " repairs " << amount << " hitpoint  ! ";
 	std::cout << "HP:" << ClapTrap::Hitpoints << std::endl;
+}
+
+void ClapTrap::nada(void)
+{
+	std::cout << "Nada !" << std::endl;
 }
