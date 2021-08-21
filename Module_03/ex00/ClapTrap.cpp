@@ -51,12 +51,14 @@ void ClapTrap::attack(std::string const & target)
 }
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap " << ClapTrap::Name << " takes " << amount << " points of damage !" << std::endl;
 	ClapTrap::Hitpoints -= amount;
+	std::cout << "ClapTrap " << ClapTrap::Name << " takes " << amount << " points of damage ! ";
+	std::cout << "HP:" << ClapTrap::Hitpoints << std::endl;
 
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "ClapTrap " << ClapTrap::Name << " repairs " << amount << " hitpoint  !" << std::endl;
 	ClapTrap::Hitpoints += amount;
+	std::cout << "ClapTrap " << ClapTrap::Name << " repairs " << amount << " hitpoint  ! ";
+	std::cout << "HP:" << ClapTrap::Hitpoints << std::endl;
 }
