@@ -1,18 +1,25 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void)
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	std::cout << "Default Constructor" << std::endl;
+	Hitpoints = _Hitpoints = 100;
+	Epoints = _Epoints = 50;
+	Adamage = _Adamage = 20;
+	guardMode = 0;
+	std::cout << "ScavTrap Name Constructor: " << Name << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string s)
+ScavTrap::ScavTrap(std::string s) : ClapTrap(s)
 {
-	ScavTrap::Name = s;
-	ScavTrap::Hitpoints = 100;
-	ScavTrap::Epoints = 50;
-	ScavTrap::Adamage = 20;
-	ScavTrap::guardMode= 0;
-	std::cout << "ScavTrap Name Constructor: " << ScavTrap::Name << std::endl;
+	Hitpoints = _Hitpoints = 100;
+	Epoints = _Epoints = 50;
+	Adamage = _Adamage = 20;
+	guardMode = 0;
+	std::cout << "ScavTrap Name Constructor: " << s << std::endl;
+	std::cout << "\tScavTrap Stats: " << std::endl;
+	std::cout << "\tHP: " << ScavTrap::Hitpoints << std::endl;
+	std::cout << "\tEP: " << ScavTrap::Epoints << std::endl;
+	std::cout << "\tAD: " << ScavTrap::Adamage << std::endl;
 }
 
 ScavTrap::~ScavTrap(void)
@@ -37,9 +44,9 @@ ScavTrap &ScavTrap::operator = (const ScavTrap &obj)
 	return (*this);
 }
 
-int			ScavTrap::getHitpoints(void) const		{return Hitpoints;}
-int			ScavTrap::getEpoints(void) const		{return Epoints;}
-int			ScavTrap::getAdamage(void) const		{return Adamage;}
+int			ScavTrap::getHitpoints(void) const		{return _Hitpoints;}
+int			ScavTrap::getEpoints(void) const		{return _Epoints;}
+int			ScavTrap::getAdamage(void) const		{return _Adamage;}
 
 void ScavTrap::guardGate(void)
 {

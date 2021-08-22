@@ -11,15 +11,21 @@ DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap()
 DiamondTrap::DiamondTrap(std::string s) : ClapTrap(s + "_clap_name")
 {
 	DiamondTrap::Name = s;
-	DiamondTrap::Hitpoints = FragTrap.getHitpoints();
-	DiamondTrap::Epoints = ScavTrap.getEpoints();
-	DiamondTrap::Adamage = FragTrap.getAdamage();
+
+	DiamondTrap::Hitpoints = FragTrap::getHitpoints();
+	DiamondTrap::Epoints = ScavTrap::getEpoints();
+	DiamondTrap::Adamage = FragTrap::getAdamage();
 	std::cout << "DiamondTrap Name Constructor: " << DiamondTrap::Name << std::endl;
+	std::cout << "\tDiamondTrap Stats: " << std::endl;
+	std::cout << "\tHP: " << DiamondTrap::Hitpoints << std::endl;
+	std::cout << "\tEP: " << DiamondTrap::Epoints << std::endl;
+	std::cout << "\tAD: " << DiamondTrap::Adamage << std::endl;
+
 }
 
 DiamondTrap::~DiamondTrap(void)
 {
-	std::cout << "DiamondTrap Destructor: " << DiamondTrapName << std::endl;
+	std::cout << "DiamondTrap Destructor: " << DiamondTrap::Name << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &obj)
@@ -31,15 +37,18 @@ DiamondTrap &DiamondTrap::operator = (const DiamondTrap &obj)
 {
 	if (this != &obj)
 	{
-		this->Name = obj.getName();
-		this->Hitpoints = obj.getHitpoints();
-		this->Epoints = obj.getEpoints();
-		this->Adamage = obj.getAdamage();
+		ClapTrap::operator=(obj);
+		Name = obj.Name;
 	}
 	return (*this);
 }
 
-void DiamondFrag::attack(std::string const & target)
+void DiamondTrap::attack(std::string const & target)
 {
 	ScavTrap::attack(target);
+}
+
+void DiamondTrap::whoAmI(void)
+{
+	std::cout << "I am DiamondTrap " << DiamondTrap::Name << " and ClaptTrap " << ClapTrap::Name << " !" << std::endl;
 }

@@ -16,7 +16,7 @@ ClapTrap::ClapTrap(std::string s)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "ClapTrap DestructorL: " << ClapTrap::Name<< std::endl;
+	std::cout << "ClapTrap Destructor: " << ClapTrap::Name<< std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &obj)

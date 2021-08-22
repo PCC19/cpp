@@ -1,17 +1,23 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void)
+FragTrap::FragTrap(void) : ClapTrap()
 {
-	std::cout << "FragTrap Default Constructor" << std::endl;
+	Hitpoints = _Hitpoints = 100;
+	Epoints = _Epoints = 100;
+	Adamage = _Adamage = 30;
+	std::cout << "FragTrap Def Name Constructor: " << Name << std::endl;
 }
 
-FragTrap::FragTrap(std::string s)
+FragTrap::FragTrap(std::string s) : ClapTrap(s)
 {
-	FragTrap::Name = s;
-	FragTrap::Hitpoints = 100;
-	FragTrap::Epoints = 100;
-	FragTrap::Adamage = 30;
-	std::cout << "FragTrap Name Constructor: " << FragTrap::Name << std::endl;
+	Hitpoints = _Hitpoints = 100;
+	Epoints = _Epoints = 100;
+	Adamage = _Adamage = 30;
+	std::cout << "FragTrap Name Constructor: " << s << std::endl;
+	std::cout << "\tFragTrap Stats: " << std::endl;
+	std::cout << "\tHP: " << FragTrap::Hitpoints << std::endl;
+	std::cout << "\tEP: " << FragTrap::Epoints << std::endl;
+	std::cout << "\tAD: " << FragTrap::Adamage << std::endl;
 }
 
 FragTrap::~FragTrap(void)
@@ -36,9 +42,9 @@ FragTrap &FragTrap::operator = (const FragTrap &obj)
 	return (*this);
 }
 
-int			FragTrap::getHitpoints(void) const		{return Hitpoints;}
-int			FragTrap::getEpoints(void) const		{return Epoints;}
-int			FragTrap::getAdamage(void) const		{return Adamage;}
+int			FragTrap::getHitpoints(void) const		{return FragTrap::_Hitpoints;}
+int			FragTrap::getEpoints(void) const		{return FragTrap::_Epoints;}
+int			FragTrap::getAdamage(void) const		{return FragTrap::_Adamage;}
 
 void FragTrap::highFivesGuys(void)
 {

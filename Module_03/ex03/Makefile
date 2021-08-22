@@ -8,13 +8,14 @@ ODIR =	./
 SRCS =	$(SDIR)main.cpp\
 		$(SDIR)ClapTrap.cpp\
 		$(SDIR)ScavTrap.cpp\
-		$(SDIR)FragTrap.cpp
+		$(SDIR)FragTrap.cpp\
+		$(SDIR)DiamondTrap.cpp
 
 
 OBJS =	$(patsubst $(SDIR)%.cpp, $(ODIR)%.o, $(SRCS))
 
 CC = clang++
-C_FLAGS = -Wall -Werror -Wextra -g -std=c++98
+C_FLAGS = -Wall -Werror -Wextra -g -std=c++98 -Wshadow
 #C_FLAGS = -Wall -Werror -Wextra -g 
 C_SANIT = -fsanitize=address
 

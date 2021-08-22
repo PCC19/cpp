@@ -5,7 +5,7 @@
 #include <string>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
 
 public:
@@ -17,13 +17,18 @@ public:
 	ScavTrap& operator = (const ScavTrap &obj);   
 
 // Methods
-	int			getHitpoints(void) const;
-	int			getEpoints(void) const;
-	int			getAdamage(void) const;
-
 	void guardGate(void);
 
+protected:
 // Atributes
+	int		_Hitpoints;
+	int		_Epoints;
+	int		_Adamage;
+
+// Methods
+	virtual int			getHitpoints(void) const;
+	virtual	int			getEpoints(void) const;
+	virtual int			getAdamage(void) const;
 
 private:
 
