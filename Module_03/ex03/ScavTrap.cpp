@@ -51,5 +51,5 @@ int			ScavTrap::getAdamage(void) const		{return _Adamage;}
 void ScavTrap::guardGate(void)
 {
 	ScavTrap::guardMode = 1;
-	std::cout << Name << " has entered gate keeper mode !" << std::endl;
+	std::cout << "I've entered gate keeper mode !" << std::endl;
 }

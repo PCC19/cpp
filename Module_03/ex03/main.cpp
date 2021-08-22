@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 22:20:17 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/22 19:53:54 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/22 20:45:30 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int main (void)
 	dragon.takeDamage(20);
 	dragon.beRepaired(50);
 	dragon.whoAmI();
+	dragon.guardGate();
+	dragon.highFivesGuys();
 
 
 	std::cout << "=======================\n";

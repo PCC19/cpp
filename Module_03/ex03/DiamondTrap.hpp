@@ -28,7 +28,7 @@ public:
 private:
 
 // Atributes
-	std::string	Name;
+	std::string	_Name;
 
 
 // Methods

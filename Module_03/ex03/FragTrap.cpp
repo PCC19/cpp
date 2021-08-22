@@ -48,5 +48,5 @@ int			FragTrap::getAdamage(void) const		{return FragTrap::_Adamage;}
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << Name << " says :  Give me a High Five ?" << std::endl;
+	std::cout << "Give me a High Five ?" << std::endl;
 }
