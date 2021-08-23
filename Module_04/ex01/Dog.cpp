@@ -11,10 +11,8 @@ Dog::Dog( Dog const & src )
 {
 	*this = src;
 	std::cout << _type << " created by copy from the Dog class." << std::endl;
-//	if (_brain == NULL)
-//		_brain = new Brain(*src.getBrain());
-//	else
-		*_brain = *src.getBrain(); 
+	_brain = new Brain;
+	*_brain = *src.getBrain();
 }
 
 Dog::~Dog( void )

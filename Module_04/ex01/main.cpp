@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 21:10:36 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/23 00:00:34 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/23 16:42:41 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@
 int main()
 {
 {
+	std::cout << "=====================================" << std::endl;
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* m = new Cat();
 	const Animal* k = new Fly();
 	
+	std::cout << "=====================================" << std::endl;
 	std::cout << "=========== Normal Animals ==========" << std::endl;
 	std::cout << "=====================================" << std::endl;
 	std::cout << "Dog Type:" << std::endl;
@@ -48,7 +50,9 @@ int main()
 	delete meta;
 }
 {
-	std::cout << "=========== Animal Array  ============" << std::endl;
+	std::cout << "=====================================" << std::endl;
+	std::cout << "=========== Animal Array  ===========" << std::endl;
+	std::cout << "=====================================" << std::endl;
 
 	Animal *arrayAnimal[6];
 	
@@ -72,4 +76,34 @@ int main()
 	}	
 }
 
+
+{
+		std::cout << "=====================================" << std::endl;
+		std::cout << "=========== Deep Copy ===============" << std::endl;
+		std::cout << "=====================================" << std::endl;
+		Dog *original_dog = new Dog;
+		Cat *original_cat = new Cat;
+		Fly	mosca;
+		std::cout << "=====================================" << std::endl;
+		Dog copy_dog(*original_dog);
+		Cat copy_cat  = *original_cat;
+		std::cout << "=====================================" << std::endl;
+		std::cout << original_dog->getType() << " original idea : " << original_dog->getBrain()->getIdea(0) << std::endl;
+		std::cout << original_dog->getType() << " original idea : " << original_dog->getBrain()->getIdea(1) << std::endl;
+		std::cout << original_dog->getType() << " original idea : " << original_dog->getBrain()->getIdea(2) << std::endl;
+		std::cout << original_cat->getType() << " original idea : " << original_cat->getBrain()->getIdea(3) << std::endl;
+		std::cout << original_cat->getType() << " original idea : " << original_cat->getBrain()->getIdea(4) << std::endl;
+		std::cout << "=====================================" << std::endl;
+		delete original_dog;
+		delete original_cat;
+		std::cout << "=====================================" << std::endl;
+		std::cout << copy_dog.getType() << " copy idea : " << copy_dog.getBrain()->getIdea(0) << std::endl;
+		std::cout << copy_dog.getType() << " copy idea : " << copy_dog.getBrain()->getIdea(1) << std::endl;
+		std::cout << copy_dog.getType() << " copy idea : " << copy_dog.getBrain()->getIdea(2) << std::endl;
+		std::cout << copy_cat.getType() << " copy idea : " << copy_cat.getBrain()->getIdea(3) << std::endl;
+		std::cout << copy_cat.getType() << " copy idea : " << copy_cat.getBrain()->getIdea(4) << std::endl;
+		std::cout << "=====================================" << std::endl;
+		//mosca.getBrain(); // Mosca does not have brain:w
+
+	}
 }

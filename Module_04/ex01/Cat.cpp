@@ -11,10 +11,8 @@ Cat::Cat( Cat const & src )
 {
 	*this = src;
 	std::cout << _type << " created by copy from the Cat class." << std::endl;
-	if (_brain == NULL)
-		_brain = new Brain(*src.getBrain());
-	else
-		*_brain = *src.getBrain(); 
+	_brain = new Brain;
+	*_brain = *src.getBrain(); 
 }
 
 Cat::~Cat( void )
