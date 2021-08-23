@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 21:36:50 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/23 21:36:51 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/23 21:38:52 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,7 @@ int main( void )
 	std::cout << "=============== Robotomy ========================" << std::endl;	
 	ruim->signForm(*ro);
 	decrement(ruim);
+	bom->signForm(*ro);
 	bom->executeForm(*ro);
 	std::cout << *ruim << std::endl;
 
