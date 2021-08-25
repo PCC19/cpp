@@ -49,6 +49,4 @@ class MyScalar
 	
 };
 
-MyScalar * str_to_scalar( std::string str);
-
 #endif

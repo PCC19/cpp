@@ -3,6 +3,7 @@
 #include "MyDouble.hpp"
 #include "MyChar.hpp"
 
+MyScalar * str_to_scalar( std::string str);
 void	print_scalar( MyScalar * convert );
 
 int	main( int argc, char *argv[] )
