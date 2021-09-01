@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 21:30:09 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/30 21:30:12 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/09/01 16:30:24 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ public:
 	Fixed operator -- (int);
 	static const Fixed &min(const Fixed &f1, const Fixed &f2);
 	static const Fixed &max(const Fixed &f1, const Fixed &f2);
-	static Fixed &min(Fixed &f1, Fixed &f2);
-	static Fixed &max(Fixed &f1, Fixed &f2);
 
 // Atributes
 
