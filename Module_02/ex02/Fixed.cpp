@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 21:30:06 by pcunha            #+#    #+#             */
+/*   Updated: 2021/09/01 02:26:27 by pcunha           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed(void)
@@ -106,14 +118,14 @@ Fixed	Fixed::operator - (const Fixed &f) const
 Fixed	Fixed::operator * (const Fixed &f) const
 {
 	Fixed temp;
-	temp.setRawBits(fixed_point_value * f.getRawBits() >> frac_bits);
+	temp.setRawBits(fixed_point_value * (f.getRawBits() >> frac_bits));
 	return (temp);
 }
 
 Fixed	Fixed::operator / (const Fixed &f) const
 {
 	Fixed temp;
-	temp.setRawBits(fixed_point_value << frac_bits / f.getRawBits());
+	temp.setRawBits((fixed_point_value << frac_bits) / f.getRawBits());
 	return (temp);
 }
 
@@ -142,22 +154,6 @@ Fixed Fixed::operator -- (int)
 	operator --();
 	return (temp);
 } 
-
-Fixed &Fixed::min(Fixed &f1, Fixed &f2)
-{
-	if (f1 < f2)
-		return (f1);
-	else
-		return (f2);
-}
-
-Fixed &Fixed::max(Fixed &f1, Fixed &f2)
-{
-	if (f1 < f2)
-		return (f2);
-	else
-		return (f1);
-}
 
 const Fixed &Fixed::min(const Fixed &f1, const Fixed &f2)
 {
