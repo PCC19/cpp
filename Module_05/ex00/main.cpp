@@ -41,8 +41,11 @@ int main( void )
 {
 	std::cout << "=============== Init Ok ====================" << std::endl;	
 	Bureaucrat* correto = createBureaucrat("Paulo", 75);
+	if (!correto) return(1);
 	Bureaucrat* Jim = createBureaucrat("Jim", 150);
+	if (!Jim) return(1);
 	Bureaucrat* Bob = createBureaucrat("Bob", 1);
+	if (!Bob) return(1);
 	std::cout << "=============== Init NOk ====================" << std::endl;	
 	Bureaucrat* ruim = createBureaucrat("ruim", 151);
 	Bureaucrat* bom = createBureaucrat("bom", 0);
