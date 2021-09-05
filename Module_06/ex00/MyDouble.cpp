@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 19:11:12 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/25 19:11:14 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/09/05 16:07:28 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ char	MyDouble::toChar( void )
 	}
 	else
 		throw MyScalar::ImpossibleException();
+	std::cout << "'";
 	return static_cast<char>(_value);
 }
 
