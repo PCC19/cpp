@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 19:10:22 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/25 19:10:24 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/09/06 06:37:13 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,11 @@ bool	isInteger( std::string str )
 bool	isDouble( std::string str )
 {
 	char *ptr;
-	
 	if (str == "-inf" || str == "+inf" || str == "nan")
 		return true;
 	if (str.empty() || str.find('.') == std::string::npos
 		|| str.find('e') != std::string::npos)
-		return false;
+		return true;
 	strtod(str.c_str(), &ptr);
 	if (*ptr == '\0')
 		return true;
@@ -65,9 +64,9 @@ bool	isFloat( std::string str )
 
 MyScalar * str_to_scalar( std::string str )
 {
-	if		(isInteger(str))	return new MyInt(str);
+	if		(isDouble(str))		return new MyDouble(str);
 	else if (isFloat(str))		return new MyFloat(str);
-	else if (isDouble(str))		return new MyDouble(str);
+	else if	(isInteger(str))	return new MyInt(str);
 	else if (isChar(str))		return new MyChar(str);
 	else	throw MyScalar::WrongScalarValueException();
 }
